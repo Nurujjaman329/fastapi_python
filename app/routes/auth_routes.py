@@ -11,6 +11,7 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
     service = AuthService(db)
     return service.register(user)
 
+
 @router.post("/login", response_model=Token)
 def login(user: Login, db: Session = Depends(get_db)):
     service = AuthService(db)
